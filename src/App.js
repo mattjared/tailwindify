@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Output from './Output';
+import Code from './Code';
+import Picker from './Picker';
+import tailwindConfig from './tailwind.js'
+const spacingOptions = tailwindConfig.theme.spacing;
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+		<div className="App">
+			<Output />
+			<Code />
+			{Object.keys(spacingOptions).map(key =>
+				<Picker styleType="padding" hey={key} value={spacingOptions[key]} />
+			)}
+
+		</div>
   );
 }
 
