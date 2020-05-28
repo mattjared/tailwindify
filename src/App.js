@@ -1,8 +1,7 @@
 import React from 'react';
 import Output from './Output';
 import Code from './Code';
-// import Picker from './Picker';
-import TestComponent from './TestComponent';
+import Picker from './Picker';
 import tailwindConfig from './tailwind.js'
 const spacingOptions = tailwindConfig.theme.spacing;
 
@@ -11,11 +10,7 @@ function App() {
 		<div className="App">
 			<Output />
 			<Code />
-			{/* {Object.keys(spacingOptions).map(key =>
-				<Picker styleType="padding" classUsed={key} value={spacingOptions[key]} />
-			)} */}
-			<TestComponent space={spacingOptions} styleType="padding" />
-
+			<Picker space={spacingOptions} styleType="padding" />
 		</div>
   );
 }
